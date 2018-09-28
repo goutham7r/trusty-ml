@@ -1,6 +1,6 @@
-## Fall 2018 Independent Study under Prof. Aws Albarghouthi
+# Fall 2018 Independent Study under Prof. Aws Albarghouthi
 
-# Exploring the possibilities of making machine learning more transparent, interpretable and trustworthy
+## Exploring the possibilities of making machine learning more transparent, interpretable and trustworthy
 
 * [DUTI1.0](https://github.com/goutham7r/trusty-ml/tree/master/DUTI1.0): Contains MATLAB code relating to the paper on Training Set Debugging (http://pages.cs.wisc.edu/~jerryzhu/DUTI/)
 * [HarryPotter.py](https://github.com/goutham7r/trusty-ml/blob/master/HarryPotter.py): Simulates the dataset from the above paper in python
