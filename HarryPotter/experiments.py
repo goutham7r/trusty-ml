@@ -9,10 +9,7 @@ import matplotlib.pyplot as plt
 def evaluate_model(y_train,y_train_mod, y_mod_pred):
 	print "Number of label changes made in dataset:",np.count_nonzero(y_train - y_train_mod)
 	print "Model Accuracy w.r.t. Original dataset:",np.count_nonzero((y_train - y_mod_pred)==0)*100.0/y_train.shape[0]
-	print "Model Accuracy w.r.t. Modified dataset:",np.count_nonzero((y_train_mod - y_mod_pred)==0)*100.0/y_train.shape[0]
-	print
-	return 
-
+	print "Model Accuracy w.r.t. Modified dataset:\n",np.count_nonzero((y_train_mod - y_mod_pred)==0)*100.0/y_train.shape[0]
 
 def check_trusted_items(X_train,y_train,X_trust,y_trust, sigma, lam, combo=None, 
 						train_cluster_labels=None, trust_cluster_labels=None, plot=False):
@@ -109,10 +106,10 @@ def cluster_data(X_train, y_train, X_trust, y_trust, sigma, lam, try_all_combos=
 				if y_trust_pred[i]!=y_trust[i]:
 					y_train_mod[train_cluster_labels==trust_cluster_labels[i]] = y_trust[i]
 
-			print(y_trust_pred,y_trust)
-			print(y_train)
-			print(y_train_mod)
-			print(train_cluster_labels,trust_cluster_labels)
+			# print(y_trust_pred,y_trust)
+			# print(y_train)
+			# print(y_train_mod)
+			# print(train_cluster_labels,trust_cluster_labels)
 
 
 			clf, y_mod_pred, _, check = check_trusted_items(X_train,y_train_mod,X_trust,y_trust, sigma, lam, "Trusted clustering: %d"%K, 

@@ -49,5 +49,3 @@ def plot_model(X_train, y_train, clf, sigma, X_trust=None, y_trust=None, title=N
 	plt.xlim(0, 1)
 	plt.ylim(0, 1)
 	plt.draw()
-
-# cmap=plt.cm.Paired

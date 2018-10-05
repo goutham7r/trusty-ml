@@ -5,12 +5,12 @@ import plotting
 import experiments
 
 # for reproducibility, fix the random seed 
-np.random.seed(123);
+np.random.seed(123)
 
 # the learner is hard coded to be kernel logistic regression.
 # learner's parameters:
-lam = 1e-3; 	# L2 regularization weight of learner
-sigma = 0.4; 	# RBF kernel bandwidth
+lam = 1e-3	# L2 regularization weight of learner
+sigma = 0.4	# RBF kernel bandwidth
 
 ################### Harry Potter Toy Example ##################
 
