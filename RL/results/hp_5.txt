@@ -1,0 +1,46 @@
+HarryPotterWorld
+Feature data:
+{'x1': {'mean': 0, 'std': 1}, 'x2': {'mean': 0, 'std': 1}}
+Actions: 
+{'x2': {'step_range': [0, 0.05], 'max_change': [0, 0.4]}}
+Terminal Reward: 50
+
+
+
+{'actor_lr': 0.001, 'critic_lr': 0.01, 'gamma': 0.95, 'tau': 0.01, 'buffer_size': 5000, 'minibatch_size': 25, 'max_episodes': 125, 'max_episode_len': 50, 'random_seed': 123, 'max_final_steps': 50, 'summary_dir': './results/tf_ddpg', 'env': <harrypotterworld.HarryPotterWorld object at 0x000001F1C64C00B8>} 
+
+
+Initial State:  x2:0.327 | 
+Reward:48.523 | Episode:10 | Qmax:2.3650 | Episode Length:10 |  True | x2:0.630 | 
+Reward:48.406 | Episode:20 | Qmax:7.0537 | Episode Length:8 |  True | x2:0.645 | 
+Reward:48.471 | Episode:30 | Qmax:10.2927 | Episode Length:7 |  True | x2:0.637 | 
+Reward:48.596 | Episode:40 | Qmax:14.7151 | Episode Length:7 |  True | x2:0.620 | 
+Reward:48.501 | Episode:50 | Qmax:19.3462 | Episode Length:9 |  True | x2:0.633 | 
+Reward:48.404 | Episode:60 | Qmax:24.3810 | Episode Length:8 |  True | x2:0.645 | 
+Reward:48.399 | Episode:70 | Qmax:27.7793 | Episode Length:7 |  True | x2:0.646 | 
+Reward:48.636 | Episode:80 | Qmax:33.3004 | Episode Length:6 |  True | x2:0.614 | 
+Reward:48.519 | Episode:90 | Qmax:34.3541 | Episode Length:6 |  True | x2:0.630 | 
+Reward:48.613 | Episode:100 | Qmax:36.8835 | Episode Length:5 |  True | x2:0.617 | 
+Reward:48.421 | Episode:110 | Qmax:37.5554 | Episode Length:8 |  True | x2:0.643 | 
+Reward:48.389 | Episode:120 | Qmax:37.9839 | Episode Length:8 |  True | x2:0.647 | 
+Done training
+
+
+Initial State: 
+x2:0.327 | 
+State: [0.] Action 1 : [0.9983094] Next State: [0.04995773]
+[0.9983094] : x2 : 0.049957734346389775    
+State: [0.04995773] Action 2 : [0.9985093] Next State: [0.09992047]
+[0.9985093] : x2 : 0.04996273219585419    
+State: [0.09992047] Action 3 : [0.9986854] Next State: [0.1498876]
+[0.9986854] : x2 : 0.04996713548898697    
+State: [0.1498876] Action 4 : [0.99884117] Next State: [0.19985863]
+[0.99884117] : x2 : 0.04997102916240692    
+State: [0.19985863] Action 5 : [0.9989781] Next State: [0.24983308]
+[0.9989781] : x2 : 0.04997445195913315    
+State: [0.24983308] Action 6 : [0.99909914] Next State: [0.29981056]
+[0.99909914] : x2 : 0.04997747838497162    
+Final State: 
+x2:0.627 | 
+Total Reward: 48.541794322007476
+00:00:11

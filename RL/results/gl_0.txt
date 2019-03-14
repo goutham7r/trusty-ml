@@ -1,0 +1,623 @@
+GermanLoadWorld
+Feature data:
+{'Age': {'type': 'numerical', 'mean': 35.546, 'std': 11.36977941738537}, 'Checking Status': {'values': array(['A11', 'A12', 'A13', 'A14'], dtype=object), 'type': 'categorical'}, 'Credit Amt': {'type': 'numerical', 'mean': 3271.258, 'std': 2821.3251545038192}, 'Credit History': {'values': array(['A30', 'A31', 'A32', 'A33', 'A34'], dtype=object), 'type': 'categorical'}, 'Duration': {'type': 'numerical', 'mean': 20.903, 'std': 12.052783537424043}, 'Existing credits': {'type': 'numerical', 'mean': 1.407, 'std': 0.5773655687690427}, 'Foreign Worker': {'values': array(['A201', 'A202'], dtype=object), 'type': 'categorical'}, 'Housing': {'values': array(['A151', 'A152', 'A153'], dtype=object), 'type': 'categorical'}, 'Installment Rate': {'type': 'numerical', 'mean': 2.973, 'std': 1.1181551770662246}, 'Job': {'values': array(['A171', 'A172', 'A173', 'A174'], dtype=object), 'type': 'categorical'}, 'Num People': {'type': 'numerical', 'mean': 1.155, 'std': 0.36190468358395134}, 'Other debtors': {'values': array(['A101', 'A102', 'A103'], dtype=object), 'type': 'categorical'}, 'Other installment plans': {'values': array(['A141', 'A142', 'A143'], dtype=object), 'type': 'categorical'}, 'Personal Status': {'values': array(['A91', 'A92', 'A93', 'A94'], dtype=object), 'type': 'categorical'}, 'Present Residence since': {'type': 'numerical', 'mean': 2.845, 'std': 1.1031658986752626}, 'Present emp since': {'values': array(['A71', 'A72', 'A73', 'A74', 'A75'], dtype=object), 'type': 'categorical'}, 'Property': {'values': array(['A121', 'A122', 'A123', 'A124'], dtype=object), 'type': 'categorical'}, 'Purpose': {'values': array(['A40', 'A41', 'A410', 'A42', 'A43', 'A44', 'A45', 'A46', 'A48',
+       'A49'], dtype=object), 'type': 'categorical'}, 'Saving acc': {'values': array(['A61', 'A62', 'A63', 'A64', 'A65'], dtype=object), 'type': 'categorical'}, 'Telephone': {'values': array(['A191', 'A192'], dtype=object), 'type': 'categorical'}}
+Actions: 
+{'Age': {'step_range': [0, 2], 'max_change': [0, 10]}, 'Credit Amt': {'step_range': [-500, 500], 'max_change': [-5000, 5000]}, 'Duration': {'step_range': [-1, 1], 'max_change': [-10, 10]}}
+Terminal Reward: 100
+
+
+
+{'actor_lr': 0.001, 'critic_lr': 0.01, 'gamma': 0.95, 'tau': 0.01, 'buffer_size': 5000, 'minibatch_size': 25, 'max_episodes': 5000, 'max_episode_len': 50, 'random_seed': 123, 'max_final_steps': 50, 'summary_dir': './results/tf_ddpg', 'env': <germanloanworld.GermanLoanWorld object at 0x000001F1C6130A58>} 
+
+
+Initial State:  Age:29.000 | Credit Amt:6805.176 | Duration:31.973 | 
+Reward:-222.922 | Episode:10 | Qmax:-3.9722 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:40.440 | 
+Reward:-226.744 | Episode:20 | Qmax:-8.5413 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:30 | Qmax:-12.6327 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:40 | Qmax:-16.2191 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-217.365 | Episode:50 | Qmax:-19.6471 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:35.921 | 
+Reward:-226.744 | Episode:60 | Qmax:-22.8510 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-226.744 | Episode:70 | Qmax:-25.9686 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-226.744 | Episode:80 | Qmax:-28.9444 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:90 | Qmax:-31.9747 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:100 | Qmax:-34.4942 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-14.197 | Episode:110 | Qmax:-37.0160 | Episode Length:49 |  False | Age:39.000 | Credit Amt:6674.766 | Duration:29.079 | 
+Reward:-59.347 | Episode:120 | Qmax:-39.1014 | Episode Length:49 |  False | Age:39.000 | Credit Amt:3427.171 | Duration:21.973 | 
+Reward:-224.002 | Episode:130 | Qmax:-41.0006 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:40.936 | 
+Reward:-226.744 | Episode:140 | Qmax:-42.6045 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-10.896 | Episode:150 | Qmax:-43.5787 | Episode Length:16 |  True | Age:29.000 | Credit Amt:2385.757 | Duration:27.525 | 
+Reward:-0.820 | Episode:160 | Qmax:-44.1982 | Episode Length:24 |  True | Age:29.511 | Credit Amt:2533.163 | Duration:23.262 | 
+Reward:-226.744 | Episode:170 | Qmax:-45.2183 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-218.160 | Episode:180 | Qmax:-46.4084 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:36.968 | 
+Reward:-84.761 | Episode:190 | Qmax:-46.7952 | Episode Length:8 |  True | Age:29.158 | Credit Amt:1896.547 | Duration:29.441 | 
+Reward:-50.627 | Episode:200 | Qmax:-46.9206 | Episode Length:12 |  True | Age:29.000 | Credit Amt:2090.491 | Duration:28.748 | 
+Reward:-71.477 | Episode:210 | Qmax:-46.9588 | Episode Length:9 |  True | Age:29.141 | Credit Amt:1985.941 | Duration:25.228 | 
+Reward:-226.744 | Episode:220 | Qmax:-46.9917 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-226.177 | Episode:230 | Qmax:-47.3756 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.780 | 
+Reward:-226.744 | Episode:240 | Qmax:-48.1919 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:250 | Qmax:-49.0344 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:260 | Qmax:-50.1353 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:270 | Qmax:-51.6575 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:280 | Qmax:-52.8203 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:290 | Qmax:-53.9347 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-77.228 | Episode:300 | Qmax:-55.0687 | Episode Length:49 |  False | Age:39.000 | Credit Amt:3007.473 | Duration:41.022 | 
+Reward:-30.511 | Episode:310 | Qmax:-56.0961 | Episode Length:49 |  False | Age:39.000 | Credit Amt:4914.278 | Duration:41.973 | 
+Reward:-226.744 | Episode:320 | Qmax:-56.9385 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:330 | Qmax:-58.1501 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:340 | Qmax:-59.3150 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-28.561 | Episode:350 | Qmax:-60.3469 | Episode Length:49 |  False | Age:39.000 | Credit Amt:5198.955 | Duration:41.973 | 
+Reward:-216.751 | Episode:360 | Qmax:-61.3010 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:34.871 | 
+Reward:-80.853 | Episode:370 | Qmax:-61.5137 | Episode Length:7 |  True | Age:29.115 | Credit Amt:1912.672 | Duration:32.444 | 
+Reward:-102.801 | Episode:380 | Qmax:-61.7418 | Episode Length:7 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:31.588 | 
+Reward:-56.831 | Episode:390 | Qmax:-61.9852 | Episode Length:8 |  True | Age:29.048 | Credit Amt:2053.456 | Duration:28.485 | 
+Reward:-55.913 | Episode:400 | Qmax:-62.0952 | Episode Length:7 |  True | Age:29.183 | Credit Amt:2062.099 | Duration:27.753 | 
+Reward:-16.503 | Episode:410 | Qmax:-62.3185 | Episode Length:7 |  True | Age:29.000 | Credit Amt:2337.727 | Duration:27.729 | 
+Reward:-5.798 | Episode:420 | Qmax:-62.3000 | Episode Length:13 |  True | Age:29.000 | Credit Amt:2515.140 | Duration:21.973 | 
+Reward:-213.750 | Episode:430 | Qmax:-61.9581 | Episode Length:49 |  False | Age:29.000 | Credit Amt:11805.176 | Duration:41.973 | 
+Reward:-13.172 | Episode:440 | Qmax:-62.6202 | Episode Length:49 |  False | Age:29.000 | Credit Amt:7875.915 | Duration:41.973 | 
+Reward:-118.459 | Episode:450 | Qmax:-62.5752 | Episode Length:49 |  False | Age:29.000 | Credit Amt:2398.345 | Duration:41.973 | 
+Reward:-219.575 | Episode:460 | Qmax:-62.5331 | Episode Length:49 |  False | Age:36.279 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:470 | Qmax:-63.1740 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:480 | Qmax:-63.4324 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-81.662 | Episode:490 | Qmax:-63.7310 | Episode Length:9 |  True | Age:29.405 | Credit Amt:1908.945 | Duration:32.462 | 
+Reward:-226.744 | Episode:500 | Qmax:-63.8679 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-104.974 | Episode:510 | Qmax:-64.4569 | Episode Length:13 |  True | Age:29.147 | Credit Amt:1805.176 | Duration:36.688 | 
+Reward:-91.487 | Episode:520 | Qmax:-64.5390 | Episode Length:20 |  True | Age:29.000 | Credit Amt:1861.569 | Duration:33.967 | 
+Reward:-65.175 | Episode:530 | Qmax:-64.6321 | Episode Length:21 |  True | Age:30.309 | Credit Amt:2003.526 | Duration:29.619 | 
+Reward:-222.200 | Episode:540 | Qmax:-64.6503 | Episode Length:49 |  False | Age:37.980 | Credit Amt:1805.176 | Duration:41.537 | 
+Reward:-214.773 | Episode:550 | Qmax:-64.8096 | Episode Length:49 |  False | Age:31.670 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:560 | Qmax:-65.0725 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-221.245 | Episode:570 | Qmax:-65.6324 | Episode Length:49 |  False | Age:37.108 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-107.750 | Episode:580 | Qmax:-66.0009 | Episode Length:49 |  False | Age:36.415 | Credit Amt:2556.523 | Duration:41.973 | 
+Reward:-11.372 | Episode:590 | Qmax:-66.5816 | Episode Length:49 |  False | Age:29.000 | Credit Amt:6542.863 | Duration:41.973 | 
+Reward:-68.484 | Episode:600 | Qmax:-66.6205 | Episode Length:49 |  False | Age:29.000 | Credit Amt:10630.803 | Duration:41.973 | 
+Reward:-213.750 | Episode:610 | Qmax:-66.5308 | Episode Length:49 |  False | Age:29.000 | Credit Amt:11805.176 | Duration:41.973 | 
+Reward:-213.750 | Episode:620 | Qmax:-66.3731 | Episode Length:49 |  False | Age:29.000 | Credit Amt:11805.176 | Duration:41.973 | 
+Reward:-13.412 | Episode:630 | Qmax:-66.3547 | Episode Length:49 |  False | Age:29.000 | Credit Amt:8008.361 | Duration:41.895 | 
+Reward:-82.469 | Episode:640 | Qmax:-66.1789 | Episode Length:12 |  True | Age:29.000 | Credit Amt:1906.069 | Duration:33.576 | 
+Reward:-226.744 | Episode:650 | Qmax:-66.1146 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-105.530 | Episode:660 | Qmax:-66.1951 | Episode Length:10 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:37.368 | 
+Reward:-100.026 | Episode:670 | Qmax:-66.2941 | Episode Length:7 |  True | Age:29.193 | Credit Amt:1824.421 | Duration:35.490 | 
+Reward:-105.386 | Episode:680 | Qmax:-66.3159 | Episode Length:7 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:37.214 | 
+Reward:-214.121 | Episode:690 | Qmax:-66.4766 | Episode Length:49 |  False | Age:30.195 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:700 | Qmax:-66.5777 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-181.038 | Episode:710 | Qmax:-66.5324 | Episode Length:49 |  False | Age:39.000 | Credit Amt:2044.133 | Duration:41.973 | 
+Reward:-226.744 | Episode:720 | Qmax:-67.0858 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:730 | Qmax:-67.6272 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-103.601 | Episode:740 | Qmax:-68.0798 | Episode Length:7 |  True | Age:29.143 | Credit Amt:1805.176 | Duration:34.471 | 
+Reward:-103.562 | Episode:750 | Qmax:-68.2734 | Episode Length:7 |  True | Age:30.120 | Credit Amt:1805.176 | Duration:33.649 | 
+Reward:-226.744 | Episode:760 | Qmax:-68.3832 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-88.190 | Episode:770 | Qmax:-68.8139 | Episode Length:16 |  True | Age:29.000 | Credit Amt:1877.046 | Duration:33.539 | 
+Reward:-24.710 | Episode:780 | Qmax:-69.2668 | Episode Length:49 |  False | Age:39.000 | Credit Amt:7285.567 | Duration:41.973 | 
+Reward:-224.246 | Episode:790 | Qmax:-69.3609 | Episode Length:49 |  False | Age:39.000 | Credit Amt:11805.176 | Duration:22.906 | 
+Reward:-220.128 | Episode:800 | Qmax:-69.5570 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:25.173 | 
+Reward:-226.744 | Episode:810 | Qmax:-69.7673 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-7.456 | Episode:820 | Qmax:-70.1366 | Episode Length:49 |  False | Age:34.740 | Credit Amt:5729.930 | Duration:36.069 | 
+Reward:-30.283 | Episode:830 | Qmax:-69.7276 | Episode Length:15 |  True | Age:29.395 | Credit Amt:2237.349 | Duration:26.916 | 
+Reward:1.787 | Episode:840 | Qmax:-69.5992 | Episode Length:16 |  True | Age:29.000 | Credit Amt:2592.761 | Duration:21.973 | 
+Reward:-53.557 | Episode:850 | Qmax:-69.4966 | Episode Length:18 |  True | Age:30.994 | Credit Amt:2087.426 | Duration:26.425 | 
+Reward:-103.869 | Episode:860 | Qmax:-69.0689 | Episode Length:8 |  True | Age:30.896 | Credit Amt:1805.176 | Duration:30.294 | 
+Reward:-226.744 | Episode:870 | Qmax:-68.9416 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-103.581 | Episode:880 | Qmax:-68.6364 | Episode Length:7 |  True | Age:30.517 | Credit Amt:1805.176 | Duration:30.656 | 
+Reward:-102.986 | Episode:890 | Qmax:-68.5066 | Episode Length:5 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:30.963 | 
+Reward:-102.862 | Episode:900 | Qmax:-68.4320 | Episode Length:5 |  True | Age:29.097 | Credit Amt:1805.176 | Duration:31.461 | 
+Reward:-85.435 | Episode:910 | Qmax:-68.3994 | Episode Length:6 |  True | Age:29.188 | Credit Amt:1892.101 | Duration:34.028 | 
+Reward:-103.612 | Episode:920 | Qmax:-68.3706 | Episode Length:7 |  True | Age:29.020 | Credit Amt:1805.176 | Duration:34.565 | 
+Reward:-81.779 | Episode:930 | Qmax:-68.4998 | Episode Length:7 |  True | Age:29.000 | Credit Amt:1908.189 | Duration:32.749 | 
+Reward:-103.422 | Episode:940 | Qmax:-68.5548 | Episode Length:8 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:34.156 | 
+Reward:-103.253 | Episode:950 | Qmax:-68.3336 | Episode Length:6 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:33.740 | 
+Reward:-104.957 | Episode:960 | Qmax:-68.1996 | Episode Length:7 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:36.716 | 
+Reward:-104.110 | Episode:970 | Qmax:-68.1758 | Episode Length:6 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:35.507 | 
+Reward:-104.034 | Episode:980 | Qmax:-68.1783 | Episode Length:5 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:35.377 | 
+Reward:-104.350 | Episode:990 | Qmax:-68.0814 | Episode Length:5 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:35.887 | 
+Reward:-104.958 | Episode:1000 | Qmax:-68.0238 | Episode Length:5 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:36.718 | 
+Reward:-105.628 | Episode:1010 | Qmax:-67.9832 | Episode Length:5 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:37.469 | 
+Reward:-105.159 | Episode:1020 | Qmax:-67.7865 | Episode Length:8 |  True | Age:29.187 | Credit Amt:1805.176 | Duration:36.899 | 
+Reward:-105.492 | Episode:1030 | Qmax:-67.7057 | Episode Length:6 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:37.328 | 
+Reward:-71.570 | Episode:1040 | Qmax:-67.6045 | Episode Length:9 |  True | Age:29.000 | Credit Amt:1965.084 | Duration:34.156 | 
+Reward:-33.104 | Episode:1050 | Qmax:-67.6589 | Episode Length:10 |  True | Age:29.000 | Credit Amt:2208.396 | Duration:28.406 | 
+Reward:-87.944 | Episode:1060 | Qmax:-67.6536 | Episode Length:13 |  True | Age:29.000 | Credit Amt:1878.748 | Duration:30.157 | 
+Reward:-220.201 | Episode:1070 | Qmax:-67.5483 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:38.828 | 
+Reward:-47.709 | Episode:1080 | Qmax:-67.6017 | Episode Length:9 |  True | Age:29.716 | Credit Amt:2128.373 | Duration:25.472 | 
+Reward:-104.748 | Episode:1090 | Qmax:-67.4808 | Episode Length:7 |  True | Age:29.827 | Credit Amt:1805.176 | Duration:27.831 | 
+Reward:-104.897 | Episode:1100 | Qmax:-67.5334 | Episode Length:7 |  True | Age:29.284 | Credit Amt:1805.176 | Duration:27.403 | 
+Reward:-104.797 | Episode:1110 | Qmax:-67.4163 | Episode Length:10 |  True | Age:31.865 | Credit Amt:1826.448 | Duration:24.439 | 
+Reward:-226.744 | Episode:1120 | Qmax:-67.4567 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-110.005 | Episode:1130 | Qmax:-67.6586 | Episode Length:16 |  True | Age:32.252 | Credit Amt:1806.824 | Duration:23.985 | 
+Reward:-226.744 | Episode:1140 | Qmax:-67.1092 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-100.722 | Episode:1150 | Qmax:-67.0983 | Episode Length:21 |  True | Age:29.120 | Credit Amt:1821.379 | Duration:35.604 | 
+Reward:-81.820 | Episode:1160 | Qmax:-67.2421 | Episode Length:27 |  True | Age:33.045 | Credit Amt:1976.018 | Duration:21.973 | 
+Reward:-220.854 | Episode:1170 | Qmax:-67.4343 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:39.278 | 
+Reward:-216.118 | Episode:1180 | Qmax:-67.3590 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:30.553 | 
+Reward:-226.744 | Episode:1190 | Qmax:-67.6710 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-226.744 | Episode:1200 | Qmax:-68.0017 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-217.817 | Episode:1210 | Qmax:-67.7173 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:27.398 | 
+Reward:-218.189 | Episode:1220 | Qmax:-67.9890 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:37.000 | 
+Reward:-219.583 | Episode:1230 | Qmax:-68.3213 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:25.597 | 
+Reward:-216.037 | Episode:1240 | Qmax:-68.7699 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:33.159 | 
+Reward:-215.980 | Episode:1250 | Qmax:-69.1166 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:30.962 | 
+Reward:-226.744 | Episode:1260 | Qmax:-69.6025 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-104.427 | Episode:1270 | Qmax:-69.7908 | Episode Length:10 |  True | Age:29.383 | Credit Amt:1805.176 | Duration:35.844 | 
+Reward:-226.744 | Episode:1280 | Qmax:-70.5141 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1290 | Qmax:-71.8047 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1300 | Qmax:-72.9033 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-218.169 | Episode:1310 | Qmax:-73.5929 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:36.978 | 
+Reward:-40.006 | Episode:1320 | Qmax:-74.6637 | Episode Length:49 |  False | Age:38.376 | Credit Amt:4031.854 | Duration:41.973 | 
+Reward:-226.744 | Episode:1330 | Qmax:-75.0805 | Episode Length:49 |  False | Age:39.000 | Credit Amt:11805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1340 | Qmax:-75.6974 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1350 | Qmax:-76.2172 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-31.003 | Episode:1360 | Qmax:-76.7547 | Episode Length:49 |  False | Age:39.000 | Credit Amt:4854.298 | Duration:21.973 | 
+Reward:-226.744 | Episode:1370 | Qmax:-77.0362 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-216.055 | Episode:1380 | Qmax:-77.3344 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:30.735 | 
+Reward:-226.744 | Episode:1390 | Qmax:-77.2816 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-16.908 | Episode:1400 | Qmax:-77.4701 | Episode Length:49 |  False | Age:29.049 | Credit Amt:8614.098 | Duration:21.973 | 
+Reward:-24.940 | Episode:1410 | Qmax:-77.1473 | Episode Length:49 |  False | Age:39.000 | Credit Amt:7407.351 | Duration:21.973 | 
+Reward:-192.200 | Episode:1420 | Qmax:-76.1311 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1964.642 | Duration:23.024 | 
+Reward:-71.947 | Episode:1430 | Qmax:-75.3313 | Episode Length:49 |  False | Age:39.000 | Credit Amt:3146.994 | Duration:21.973 | 
+Reward:-31.468 | Episode:1440 | Qmax:-74.3361 | Episode Length:49 |  False | Age:39.000 | Credit Amt:4800.878 | Duration:41.973 | 
+Reward:-226.744 | Episode:1450 | Qmax:-73.1855 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1460 | Qmax:-72.0839 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-204.171 | Episode:1470 | Qmax:-71.1894 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1908.000 | Duration:41.449 | 
+Reward:-216.145 | Episode:1480 | Qmax:-70.4351 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:33.469 | 
+Reward:-221.422 | Episode:1490 | Qmax:-69.7230 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:24.314 | 
+Reward:-226.744 | Episode:1500 | Qmax:-68.6317 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1510 | Qmax:-68.4062 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-214.370 | Episode:1520 | Qmax:-69.0825 | Episode Length:49 |  False | Age:30.828 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-221.998 | Episode:1530 | Qmax:-69.6415 | Episode Length:49 |  False | Age:37.430 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1540 | Qmax:-70.5844 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1550 | Qmax:-71.6399 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-41.006 | Episode:1560 | Qmax:-73.1573 | Episode Length:49 |  False | Age:39.000 | Credit Amt:9521.455 | Duration:41.973 | 
+Reward:-226.744 | Episode:1570 | Qmax:-73.6970 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1580 | Qmax:-74.3292 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1590 | Qmax:-74.7380 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-216.027 | Episode:1600 | Qmax:-75.6797 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:33.130 | 
+Reward:-226.744 | Episode:1610 | Qmax:-76.0265 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-116.102 | Episode:1620 | Qmax:-76.3804 | Episode Length:14 |  True | Age:33.584 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:8.522 | Episode:1630 | Qmax:-76.4796 | Episode Length:22 |  True | Age:29.054 | Credit Amt:2667.663 | Duration:21.973 | 
+Reward:-58.340 | Episode:1640 | Qmax:-76.4688 | Episode Length:12 |  True | Age:29.065 | Credit Amt:2036.721 | Duration:31.672 | 
+Reward:-11.744 | Episode:1650 | Qmax:-76.2327 | Episode Length:49 |  False | Age:29.097 | Credit Amt:7286.485 | Duration:41.973 | 
+Reward:-174.841 | Episode:1660 | Qmax:-75.4911 | Episode Length:49 |  False | Age:39.000 | Credit Amt:2081.761 | Duration:41.973 | 
+Reward:-215.823 | Episode:1670 | Qmax:-74.4190 | Episode Length:49 |  False | Age:33.254 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-214.238 | Episode:1680 | Qmax:-74.1867 | Episode Length:49 |  False | Age:30.504 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1690 | Qmax:-74.1983 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1700 | Qmax:-74.3085 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1710 | Qmax:-73.9401 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1720 | Qmax:-73.5425 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-59.082 | Episode:1730 | Qmax:-73.2282 | Episode Length:49 |  False | Age:39.000 | Credit Amt:3434.078 | Duration:41.973 | 
+Reward:-226.744 | Episode:1740 | Qmax:-72.5870 | Episode Length:49 |  False | Age:39.000 | Credit Amt:11805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1750 | Qmax:-72.3626 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-77.889 | Episode:1760 | Qmax:-72.7292 | Episode Length:49 |  False | Age:32.011 | Credit Amt:2856.172 | Duration:41.973 | 
+Reward:-104.913 | Episode:1770 | Qmax:-72.8422 | Episode Length:8 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:36.662 | 
+Reward:-226.744 | Episode:1780 | Qmax:-72.9087 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1790 | Qmax:-72.8566 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-214.532 | Episode:1800 | Qmax:-73.0597 | Episode Length:49 |  False | Age:31.189 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-224.001 | Episode:1810 | Qmax:-73.1182 | Episode Length:49 |  False | Age:38.173 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-214.953 | Episode:1820 | Qmax:-73.3248 | Episode Length:49 |  False | Age:31.994 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-213.771 | Episode:1830 | Qmax:-73.6982 | Episode Length:49 |  False | Age:29.078 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1840 | Qmax:-73.7800 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1850 | Qmax:-74.5821 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-107.159 | Episode:1860 | Qmax:-74.8896 | Episode Length:14 |  True | Age:31.910 | Credit Amt:1805.176 | Duration:26.110 | 
+Reward:-219.294 | Episode:1870 | Qmax:-75.2154 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:25.842 | 
+Reward:-220.882 | Episode:1880 | Qmax:-75.7948 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:39.296 | 
+Reward:-216.372 | Episode:1890 | Qmax:-76.1294 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:34.053 | 
+Reward:-226.744 | Episode:1900 | Qmax:-76.8522 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1910 | Qmax:-77.4952 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:1920 | Qmax:-78.0335 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-222.433 | Episode:1930 | Qmax:-78.5436 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:23.752 | 
+Reward:-226.744 | Episode:1940 | Qmax:-78.6870 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-210.385 | Episode:1950 | Qmax:-78.8701 | Episode Length:49 |  False | Age:35.191 | Credit Amt:1805.176 | Duration:25.875 | 
+Reward:-5.199 | Episode:1960 | Qmax:-78.8595 | Episode Length:24 |  True | Age:29.000 | Credit Amt:2445.567 | Duration:26.306 | 
+Reward:-16.696 | Episode:1970 | Qmax:-78.8014 | Episode Length:49 |  False | Age:32.221 | Credit Amt:5235.566 | Duration:41.973 | 
+Reward:-27.691 | Episode:1980 | Qmax:-78.1023 | Episode Length:49 |  False | Age:39.000 | Credit Amt:5360.172 | Duration:41.973 | 
+Reward:-215.751 | Episode:1990 | Qmax:-77.6802 | Episode Length:49 |  False | Age:33.164 | Credit Amt:11805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:2000 | Qmax:-77.2854 | Episode Length:49 |  False | Age:39.000 | Credit Amt:11805.176 | Duration:41.973 | 
+Reward:-26.949 | Episode:2010 | Qmax:-76.7894 | Episode Length:49 |  False | Age:39.000 | Credit Amt:5523.765 | Duration:41.973 | 
+Reward:-224.361 | Episode:2020 | Qmax:-75.6862 | Episode Length:49 |  False | Age:38.293 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-109.483 | Episode:2030 | Qmax:-74.5683 | Episode Length:49 |  False | Age:38.512 | Credit Amt:2593.086 | Duration:41.973 | 
+Reward:-35.509 | Episode:2040 | Qmax:-73.2777 | Episode Length:49 |  False | Age:39.000 | Credit Amt:4432.424 | Duration:41.973 | 
+Reward:-226.744 | Episode:2050 | Qmax:-72.0836 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-226.744 | Episode:2060 | Qmax:-70.8640 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-223.224 | Episode:2070 | Qmax:-70.1405 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:40.586 | 
+Reward:-215.781 | Episode:2080 | Qmax:-69.5087 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:32.310 | 
+Reward:-218.710 | Episode:2090 | Qmax:-69.5401 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:37.559 | 
+Reward:-226.744 | Episode:2100 | Qmax:-69.7558 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-109.211 | Episode:2110 | Qmax:-69.8071 | Episode Length:8 |  True | Age:32.477 | Credit Amt:1805.176 | Duration:24.769 | 
+Reward:-216.360 | Episode:2120 | Qmax:-70.0145 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:29.922 | 
+Reward:-226.744 | Episode:2130 | Qmax:-70.3152 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-218.808 | Episode:2140 | Qmax:-71.5032 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:26.290 | 
+Reward:-226.744 | Episode:2150 | Qmax:-72.4548 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:2160 | Qmax:-73.6625 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:2170 | Qmax:-74.5516 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:2180 | Qmax:-75.5483 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:2190 | Qmax:-76.5511 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:2200 | Qmax:-77.5662 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:2210 | Qmax:-78.6104 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-221.567 | Episode:2220 | Qmax:-79.4730 | Episode Length:49 |  False | Age:37.250 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-105.260 | Episode:2230 | Qmax:-79.7862 | Episode Length:7 |  True | Age:29.007 | Credit Amt:1805.176 | Duration:37.073 | 
+Reward:-102.881 | Episode:2240 | Qmax:-79.9020 | Episode Length:6 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:32.640 | 
+Reward:-102.734 | Episode:2250 | Qmax:-79.8668 | Episode Length:5 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:32.106 | 
+Reward:-103.103 | Episode:2260 | Qmax:-79.9814 | Episode Length:5 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:33.332 | 
+Reward:-47.527 | Episode:2270 | Qmax:-80.0211 | Episode Length:6 |  True | Age:29.000 | Credit Amt:2103.381 | Duration:32.634 | 
+Reward:-103.132 | Episode:2280 | Qmax:-80.1533 | Episode Length:7 |  True | Age:29.063 | Credit Amt:1805.176 | Duration:33.368 | 
+Reward:-103.142 | Episode:2290 | Qmax:-80.2243 | Episode Length:7 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:33.442 | 
+Reward:-102.743 | Episode:2300 | Qmax:-80.3011 | Episode Length:6 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:32.140 | 
+Reward:-82.143 | Episode:2310 | Qmax:-80.3147 | Episode Length:5 |  True | Age:29.000 | Credit Amt:1906.126 | Duration:31.324 | 
+Reward:-46.267 | Episode:2320 | Qmax:-80.4921 | Episode Length:5 |  True | Age:29.000 | Credit Amt:2112.653 | Duration:30.696 | 
+Reward:-67.929 | Episode:2330 | Qmax:-80.5575 | Episode Length:6 |  True | Age:29.731 | Credit Amt:1983.945 | Duration:30.983 | 
+Reward:-84.949 | Episode:2340 | Qmax:-80.4190 | Episode Length:9 |  True | Age:30.676 | Credit Amt:1904.155 | Duration:27.504 | 
+Reward:-112.722 | Episode:2350 | Qmax:-80.2785 | Episode Length:10 |  True | Age:33.495 | Credit Amt:1805.176 | Duration:23.260 | 
+Reward:-39.617 | Episode:2360 | Qmax:-80.2897 | Episode Length:10 |  True | Age:30.329 | Credit Amt:2229.526 | Duration:22.171 | 
+Reward:-226.744 | Episode:2370 | Qmax:-80.5650 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-226.744 | Episode:2380 | Qmax:-80.4319 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-226.744 | Episode:2390 | Qmax:-80.5165 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-32.196 | Episode:2400 | Qmax:-80.6223 | Episode Length:10 |  True | Age:29.293 | Credit Amt:2213.630 | Duration:28.845 | 
+Reward:-78.933 | Episode:2410 | Qmax:-80.4115 | Episode Length:11 |  True | Age:32.108 | Credit Amt:1982.006 | Duration:22.384 | 
+Reward:-226.744 | Episode:2420 | Qmax:-80.3406 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-226.744 | Episode:2430 | Qmax:-80.1232 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-226.744 | Episode:2440 | Qmax:-80.3033 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-226.744 | Episode:2450 | Qmax:-80.5769 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-219.288 | Episode:2460 | Qmax:-80.5624 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:25.847 | 
+Reward:-217.427 | Episode:2470 | Qmax:-80.7088 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:27.933 | 
+Reward:-226.744 | Episode:2480 | Qmax:-80.8514 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-39.377 | Episode:2490 | Qmax:-81.3287 | Episode Length:49 |  False | Age:39.000 | Credit Amt:4178.273 | Duration:41.973 | 
+Reward:-226.744 | Episode:2500 | Qmax:-81.5212 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-217.821 | Episode:2510 | Qmax:-81.3287 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:36.553 | 
+Reward:-34.633 | Episode:2520 | Qmax:-81.4899 | Episode Length:49 |  False | Age:39.000 | Credit Amt:4500.989 | Duration:41.973 | 
+Reward:-226.744 | Episode:2530 | Qmax:-81.3422 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-56.596 | Episode:2540 | Qmax:-81.4689 | Episode Length:49 |  False | Age:39.000 | Credit Amt:3282.632 | Duration:36.730 | 
+Reward:-226.744 | Episode:2550 | Qmax:-81.1880 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-215.779 | Episode:2560 | Qmax:-80.9550 | Episode Length:49 |  False | Age:33.200 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-65.041 | Episode:2570 | Qmax:-80.8414 | Episode Length:7 |  True | Age:29.210 | Credit Amt:1999.309 | Duration:32.955 | 
+Reward:-226.744 | Episode:2580 | Qmax:-80.7141 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:2590 | Qmax:-80.2386 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:2600 | Qmax:-80.0626 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:2610 | Qmax:-80.0567 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-42.864 | Episode:2620 | Qmax:-80.1372 | Episode Length:49 |  False | Age:39.000 | Credit Amt:3996.345 | Duration:41.973 | 
+Reward:-32.227 | Episode:2630 | Qmax:-80.3147 | Episode Length:10 |  True | Age:29.000 | Credit Amt:2208.598 | Duration:30.131 | 
+Reward:-219.824 | Episode:2640 | Qmax:-80.3011 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:38.543 | 
+Reward:-226.744 | Episode:2650 | Qmax:-80.3357 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-90.096 | Episode:2660 | Qmax:-80.1606 | Episode Length:9 |  True | Age:29.725 | Credit Amt:1867.253 | Duration:31.252 | 
+Reward:-63.045 | Episode:2670 | Qmax:-80.2030 | Episode Length:10 |  True | Age:29.471 | Credit Amt:2009.778 | Duration:31.817 | 
+Reward:-91.704 | Episode:2680 | Qmax:-80.2511 | Episode Length:8 |  True | Age:29.000 | Credit Amt:1860.257 | Duration:33.841 | 
+Reward:-105.513 | Episode:2690 | Qmax:-80.2131 | Episode Length:9 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:37.350 | 
+Reward:-87.209 | Episode:2700 | Qmax:-79.9930 | Episode Length:9 |  True | Age:29.000 | Credit Amt:1881.138 | Duration:33.073 | 
+Reward:-102.937 | Episode:2710 | Qmax:-80.0524 | Episode Length:8 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:32.826 | 
+Reward:-96.193 | Episode:2720 | Qmax:-79.8902 | Episode Length:8 |  True | Age:29.000 | Credit Amt:1836.610 | Duration:32.669 | 
+Reward:-55.260 | Episode:2730 | Qmax:-79.8875 | Episode Length:9 |  True | Age:29.000 | Credit Amt:2062.098 | Duration:28.707 | 
+Reward:-20.468 | Episode:2740 | Qmax:-79.9838 | Episode Length:7 |  True | Age:29.000 | Credit Amt:2306.385 | Duration:27.666 | 
+Reward:-46.945 | Episode:2750 | Qmax:-79.8578 | Episode Length:11 |  True | Age:29.000 | Credit Amt:2126.567 | Duration:26.198 | 
+Reward:-3.451 | Episode:2760 | Qmax:-79.6109 | Episode Length:16 |  True | Age:29.000 | Credit Amt:2538.480 | Duration:21.973 | 
+Reward:-0.770 | Episode:2770 | Qmax:-79.0763 | Episode Length:11 |  True | Age:29.000 | Credit Amt:2564.485 | Duration:22.018 | 
+Reward:-58.133 | Episode:2780 | Qmax:-78.9001 | Episode Length:9 |  True | Age:29.851 | Credit Amt:2062.351 | Duration:25.573 | 
+Reward:-98.701 | Episode:2790 | Qmax:-78.7261 | Episode Length:7 |  True | Age:30.551 | Credit Amt:1852.431 | Duration:24.467 | 
+Reward:-106.572 | Episode:2800 | Qmax:-78.5926 | Episode Length:8 |  True | Age:30.954 | Credit Amt:1805.176 | Duration:26.211 | 
+Reward:-66.109 | Episode:2810 | Qmax:-78.3917 | Episode Length:9 |  True | Age:29.679 | Credit Amt:2016.544 | Duration:25.339 | 
+Reward:-91.202 | Episode:2820 | Qmax:-77.9901 | Episode Length:8 |  True | Age:30.450 | Credit Amt:1870.052 | Duration:28.113 | 
+Reward:-103.371 | Episode:2830 | Qmax:-77.8096 | Episode Length:8 |  True | Age:30.237 | Credit Amt:1805.176 | Duration:30.967 | 
+Reward:-226.744 | Episode:2840 | Qmax:-77.5404 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-216.315 | Episode:2850 | Qmax:-76.3700 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:33.915 | 
+Reward:-217.525 | Episode:2860 | Qmax:-74.9688 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:27.792 | 
+Reward:-223.286 | Episode:2870 | Qmax:-74.0521 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:40.615 | 
+Reward:-224.355 | Episode:2880 | Qmax:-73.1241 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:22.861 | 
+Reward:-226.744 | Episode:2890 | Qmax:-72.0963 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-103.245 | Episode:2900 | Qmax:-71.6929 | Episode Length:6 |  True | Age:30.137 | Credit Amt:1805.176 | Duration:32.689 | 
+Reward:-226.744 | Episode:2910 | Qmax:-71.2943 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:2920 | Qmax:-70.7236 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-220.497 | Episode:2930 | Qmax:-70.5300 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:39.038 | 
+Reward:-226.744 | Episode:2940 | Qmax:-70.8356 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:2950 | Qmax:-71.4771 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:2960 | Qmax:-72.4913 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.185 | Episode:2970 | Qmax:-73.5199 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.783 | 
+Reward:-226.744 | Episode:2980 | Qmax:-74.5071 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:2990 | Qmax:-75.5216 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:3000 | Qmax:-76.2318 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-192.024 | Episode:3010 | Qmax:-77.2380 | Episode Length:49 |  False | Age:31.267 | Credit Amt:1915.487 | Duration:41.973 | 
+Reward:-45.332 | Episode:3020 | Qmax:-77.7526 | Episode Length:49 |  False | Age:29.000 | Credit Amt:10156.330 | Duration:41.973 | 
+Reward:-25.107 | Episode:3030 | Qmax:-78.2113 | Episode Length:49 |  False | Age:29.000 | Credit Amt:4230.771 | Duration:41.841 | 
+Reward:-56.829 | Episode:3040 | Qmax:-78.1750 | Episode Length:24 |  True | Age:29.000 | Credit Amt:2045.561 | Duration:32.260 | 
+Reward:12.146 | Episode:3050 | Qmax:-77.9801 | Episode Length:33 |  True | Age:29.000 | Credit Amt:2710.313 | Duration:21.973 | 
+Reward:-29.400 | Episode:3060 | Qmax:-77.7738 | Episode Length:17 |  True | Age:30.334 | Credit Amt:2257.878 | Duration:25.424 | 
+Reward:-216.171 | Episode:3070 | Qmax:-76.5194 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:30.405 | 
+Reward:-226.744 | Episode:3080 | Qmax:-75.3211 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:3090 | Qmax:-74.3787 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:3100 | Qmax:-73.4929 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:3110 | Qmax:-72.5374 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:3120 | Qmax:-71.7491 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-39.426 | Episode:3130 | Qmax:-70.7193 | Episode Length:16 |  True | Age:29.000 | Credit Amt:2155.853 | Duration:31.487 | 
+Reward:-69.812 | Episode:3140 | Qmax:-70.5432 | Episode Length:13 |  True | Age:29.734 | Credit Amt:1978.526 | Duration:28.826 | 
+Reward:-68.282 | Episode:3150 | Qmax:-70.5372 | Episode Length:10 |  True | Age:29.000 | Credit Amt:1984.173 | Duration:29.423 | 
+Reward:-42.787 | Episode:3160 | Qmax:-70.4123 | Episode Length:7 |  True | Age:29.000 | Credit Amt:2144.041 | Duration:27.958 | 
+Reward:-81.362 | Episode:3170 | Qmax:-70.2634 | Episode Length:7 |  True | Age:29.000 | Credit Amt:1913.206 | Duration:29.685 | 
+Reward:-59.338 | Episode:3180 | Qmax:-70.3749 | Episode Length:8 |  True | Age:29.949 | Credit Amt:2037.872 | Duration:29.181 | 
+Reward:-104.988 | Episode:3190 | Qmax:-69.8731 | Episode Length:6 |  True | Age:31.247 | Credit Amt:1805.176 | Duration:28.328 | 
+Reward:-223.118 | Episode:3200 | Qmax:-70.1340 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:40.535 | 
+Reward:-24.371 | Episode:3210 | Qmax:-70.5282 | Episode Length:49 |  False | Age:39.000 | Credit Amt:6538.701 | Duration:41.973 | 
+Reward:-219.829 | Episode:3220 | Qmax:-71.2972 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:25.400 | 
+Reward:-226.744 | Episode:3230 | Qmax:-71.7429 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-219.370 | Episode:3240 | Qmax:-72.2338 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:25.776 | 
+Reward:-216.886 | Episode:3250 | Qmax:-72.7555 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:28.819 | 
+Reward:-164.353 | Episode:3260 | Qmax:-73.2464 | Episode Length:49 |  False | Age:39.000 | Credit Amt:2149.090 | Duration:21.973 | 
+Reward:-226.744 | Episode:3270 | Qmax:-73.4225 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-226.744 | Episode:3280 | Qmax:-73.6712 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-216.580 | Episode:3290 | Qmax:-74.1008 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:29.423 | 
+Reward:-226.744 | Episode:3300 | Qmax:-74.6389 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:3310 | Qmax:-75.1077 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-226.744 | Episode:3320 | Qmax:-75.4746 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-24.865 | Episode:3330 | Qmax:-75.9078 | Episode Length:49 |  False | Age:39.000 | Credit Amt:5300.302 | Duration:40.764 | 
+Reward:-221.768 | Episode:3340 | Qmax:-75.8911 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:39.834 | 
+Reward:-226.744 | Episode:3350 | Qmax:-76.1926 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-77.614 | Episode:3360 | Qmax:-76.0416 | Episode Length:18 |  True | Age:29.020 | Credit Amt:1930.468 | Duration:33.076 | 
+Reward:-87.672 | Episode:3370 | Qmax:-75.9646 | Episode Length:13 |  True | Age:30.301 | Credit Amt:1881.233 | Duration:30.659 | 
+Reward:-215.717 | Episode:3380 | Qmax:-75.7498 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:31.880 | 
+Reward:-218.420 | Episode:3390 | Qmax:-75.6243 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:37.258 | 
+Reward:-222.333 | Episode:3400 | Qmax:-75.4447 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:40.142 | 
+Reward:-226.744 | Episode:3410 | Qmax:-75.5312 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-67.002 | Episode:3420 | Qmax:-75.8590 | Episode Length:49 |  False | Age:39.000 | Credit Amt:3128.822 | Duration:39.272 | 
+Reward:-226.744 | Episode:3430 | Qmax:-76.0002 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-219.218 | Episode:3440 | Qmax:-76.0606 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:25.909 | 
+Reward:-60.443 | Episode:3450 | Qmax:-76.2578 | Episode Length:8 |  True | Age:29.724 | Credit Amt:2026.086 | Duration:31.320 | 
+Reward:-89.227 | Episode:3460 | Qmax:-76.4174 | Episode Length:15 |  True | Age:29.955 | Credit Amt:1874.712 | Duration:29.707 | 
+Reward:-42.113 | Episode:3470 | Qmax:-76.6332 | Episode Length:10 |  True | Age:29.000 | Credit Amt:2137.297 | Duration:32.052 | 
+Reward:-103.155 | Episode:3480 | Qmax:-76.4919 | Episode Length:9 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:30.468 | 
+Reward:-66.180 | Episode:3490 | Qmax:-76.5418 | Episode Length:8 |  True | Age:29.000 | Credit Amt:2001.968 | Duration:27.639 | 
+Reward:-54.076 | Episode:3500 | Qmax:-76.5867 | Episode Length:8 |  True | Age:29.000 | Credit Amt:2071.625 | Duration:28.083 | 
+Reward:-23.208 | Episode:3510 | Qmax:-76.5788 | Episode Length:8 |  True | Age:29.000 | Credit Amt:2287.978 | Duration:27.177 | 
+Reward:-84.067 | Episode:3520 | Qmax:-76.5271 | Episode Length:8 |  True | Age:29.000 | Credit Amt:1900.398 | Duration:29.225 | 
+Reward:-65.159 | Episode:3530 | Qmax:-76.5541 | Episode Length:10 |  True | Age:29.000 | Credit Amt:2011.608 | Duration:26.821 | 
+Reward:-103.790 | Episode:3540 | Qmax:-76.4720 | Episode Length:8 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:29.013 | 
+Reward:-103.731 | Episode:3550 | Qmax:-76.2561 | Episode Length:8 |  True | Age:29.089 | Credit Amt:1805.176 | Duration:34.772 | 
+Reward:-104.246 | Episode:3560 | Qmax:-75.5956 | Episode Length:6 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:35.728 | 
+Reward:-103.144 | Episode:3570 | Qmax:-75.3905 | Episode Length:7 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:33.447 | 
+Reward:-95.985 | Episode:3580 | Qmax:-75.3142 | Episode Length:8 |  True | Age:29.188 | Credit Amt:1846.083 | Duration:36.256 | 
+Reward:-213.750 | Episode:3590 | Qmax:-75.4688 | Episode Length:49 |  False | Age:29.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-216.961 | Episode:3600 | Qmax:-74.9803 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:35.263 | 
+Reward:-223.521 | Episode:3610 | Qmax:-74.5576 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:40.723 | 
+Reward:-103.184 | Episode:3620 | Qmax:-74.4541 | Episode Length:8 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:33.559 | 
+Reward:-214.653 | Episode:3630 | Qmax:-74.2616 | Episode Length:49 |  False | Age:31.437 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-17.684 | Episode:3640 | Qmax:-74.1631 | Episode Length:49 |  False | Age:32.899 | Credit Amt:5146.116 | Duration:41.973 | 
+Reward:-226.744 | Episode:3650 | Qmax:-73.8403 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-220.693 | Episode:3660 | Qmax:-73.7332 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:24.775 | 
+Reward:-217.527 | Episode:3670 | Qmax:-73.4577 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:27.790 | 
+Reward:-75.645 | Episode:3680 | Qmax:-73.1345 | Episode Length:15 |  True | Age:30.255 | Credit Amt:1957.160 | Duration:26.455 | 
+Reward:-77.853 | Episode:3690 | Qmax:-73.0272 | Episode Length:11 |  True | Age:29.031 | Credit Amt:1930.383 | Duration:30.249 | 
+Reward:-103.011 | Episode:3700 | Qmax:-72.9153 | Episode Length:11 |  True | Age:29.121 | Credit Amt:1805.176 | Duration:32.959 | 
+Reward:-216.082 | Episode:3710 | Qmax:-73.3676 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:33.292 | 
+Reward:-226.744 | Episode:3720 | Qmax:-73.4431 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:3730 | Qmax:-73.6846 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-66.932 | Episode:3740 | Qmax:-74.1649 | Episode Length:49 |  False | Age:39.000 | Credit Amt:3248.752 | Duration:41.973 | 
+Reward:-225.680 | Episode:3750 | Qmax:-74.0134 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.602 | 
+Reward:-104.517 | Episode:3760 | Qmax:-74.2164 | Episode Length:8 |  True | Age:29.280 | Credit Amt:1805.176 | Duration:36.022 | 
+Reward:-226.744 | Episode:3770 | Qmax:-74.3171 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:3780 | Qmax:-74.4138 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-213.750 | Episode:3790 | Qmax:-74.6600 | Episode Length:49 |  False | Age:29.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-213.750 | Episode:3800 | Qmax:-74.7242 | Episode Length:49 |  False | Age:29.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-220.321 | Episode:3810 | Qmax:-74.8838 | Episode Length:49 |  False | Age:38.949 | Credit Amt:1805.176 | Duration:39.044 | 
+Reward:-226.744 | Episode:3820 | Qmax:-75.1960 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-217.820 | Episode:3830 | Qmax:-75.4284 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:27.394 | 
+Reward:-223.660 | Episode:3840 | Qmax:-75.8297 | Episode Length:49 |  False | Age:39.000 | Credit Amt:11805.176 | Duration:23.161 | 
+Reward:-226.744 | Episode:3850 | Qmax:-76.0705 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-8.496 | Episode:3860 | Qmax:-76.3129 | Episode Length:18 |  True | Age:29.009 | Credit Amt:2444.152 | Duration:24.021 | 
+Reward:7.415 | Episode:3870 | Qmax:-76.2957 | Episode Length:23 |  True | Age:29.000 | Credit Amt:2609.376 | Duration:23.636 | 
+Reward:-223.855 | Episode:3880 | Qmax:-76.0452 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:40.872 | 
+Reward:-215.788 | Episode:3890 | Qmax:-75.7745 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:31.612 | 
+Reward:-85.148 | Episode:3900 | Qmax:-75.3848 | Episode Length:9 |  True | Age:29.691 | Credit Amt:1892.154 | Duration:32.844 | 
+Reward:-219.898 | Episode:3910 | Qmax:-75.4651 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:38.600 | 
+Reward:-105.024 | Episode:3920 | Qmax:-75.2910 | Episode Length:6 |  True | Age:29.259 | Credit Amt:1805.176 | Duration:36.712 | 
+Reward:-220.962 | Episode:3930 | Qmax:-75.0273 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:39.348 | 
+Reward:-49.951 | Episode:3940 | Qmax:-75.1603 | Episode Length:9 |  True | Age:29.000 | Credit Amt:2087.484 | Duration:31.684 | 
+Reward:-37.778 | Episode:3950 | Qmax:-75.1415 | Episode Length:9 |  True | Age:29.000 | Credit Amt:2173.079 | Duration:29.135 | 
+Reward:-87.245 | Episode:3960 | Qmax:-75.1040 | Episode Length:7 |  True | Age:29.000 | Credit Amt:1892.039 | Duration:26.922 | 
+Reward:-12.276 | Episode:3970 | Qmax:-74.9661 | Episode Length:7 |  True | Age:29.000 | Credit Amt:2374.374 | Duration:27.470 | 
+Reward:-15.346 | Episode:3980 | Qmax:-74.9617 | Episode Length:7 |  True | Age:29.000 | Credit Amt:2352.772 | Duration:26.879 | 
+Reward:-79.108 | Episode:3990 | Qmax:-74.8598 | Episode Length:8 |  True | Age:29.000 | Credit Amt:1934.844 | Duration:26.779 | 
+Reward:-16.964 | Episode:4000 | Qmax:-74.5404 | Episode Length:6 |  True | Age:29.000 | Credit Amt:2341.347 | Duration:26.630 | 
+Reward:-91.323 | Episode:4010 | Qmax:-74.3863 | Episode Length:8 |  True | Age:29.018 | Credit Amt:1869.456 | Duration:27.459 | 
+Reward:-74.901 | Episode:4020 | Qmax:-74.3972 | Episode Length:9 |  True | Age:30.603 | Credit Amt:1954.053 | Duration:28.295 | 
+Reward:-75.437 | Episode:4030 | Qmax:-74.3315 | Episode Length:9 |  True | Age:29.997 | Credit Amt:1947.944 | Duration:28.942 | 
+Reward:-226.744 | Episode:4040 | Qmax:-74.0742 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-103.320 | Episode:4050 | Qmax:-73.5498 | Episode Length:9 |  True | Age:29.787 | Credit Amt:1805.176 | Duration:30.654 | 
+Reward:-226.744 | Episode:4060 | Qmax:-73.4812 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-80.596 | Episode:4070 | Qmax:-72.9427 | Episode Length:24 |  True | Age:29.000 | Credit Amt:1917.333 | Duration:34.326 | 
+Reward:-225.697 | Episode:4080 | Qmax:-72.6042 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.608 | 
+Reward:-226.744 | Episode:4090 | Qmax:-72.3931 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4100 | Qmax:-72.3534 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4110 | Qmax:-72.1705 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4120 | Qmax:-71.9148 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4130 | Qmax:-72.1173 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-27.344 | Episode:4140 | Qmax:-71.8501 | Episode Length:49 |  False | Age:39.000 | Credit Amt:8177.194 | Duration:41.973 | 
+Reward:-16.854 | Episode:4150 | Qmax:-71.5156 | Episode Length:49 |  False | Age:35.162 | Credit Amt:7746.297 | Duration:41.973 | 
+Reward:-18.212 | Episode:4160 | Qmax:-71.6033 | Episode Length:49 |  False | Age:30.666 | Credit Amt:8713.818 | Duration:41.973 | 
+Reward:-226.744 | Episode:4170 | Qmax:-71.7782 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-126.785 | Episode:4180 | Qmax:-71.4788 | Episode Length:49 |  False | Age:36.836 | Credit Amt:2305.299 | Duration:35.134 | 
+Reward:-217.652 | Episode:4190 | Qmax:-71.3822 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:36.331 | 
+Reward:-216.227 | Episode:4200 | Qmax:-71.0772 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:30.257 | 
+Reward:-226.744 | Episode:4210 | Qmax:-70.8641 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-222.475 | Episode:4220 | Qmax:-70.3661 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:40.216 | 
+Reward:-226.744 | Episode:4230 | Qmax:-70.2117 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-223.478 | Episode:4240 | Qmax:-70.1633 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:40.703 | 
+Reward:-79.113 | Episode:4250 | Qmax:-70.3229 | Episode Length:8 |  True | Age:29.996 | Credit Amt:1924.448 | Duration:30.693 | 
+Reward:-103.877 | Episode:4260 | Qmax:-70.5048 | Episode Length:10 |  True | Age:29.360 | Credit Amt:1805.176 | Duration:34.910 | 
+Reward:-226.744 | Episode:4270 | Qmax:-70.7264 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4280 | Qmax:-71.3383 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4290 | Qmax:-72.2261 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-60.465 | Episode:4300 | Qmax:-73.2221 | Episode Length:49 |  False | Age:39.000 | Credit Amt:3398.657 | Duration:41.973 | 
+Reward:-23.536 | Episode:4310 | Qmax:-74.0113 | Episode Length:49 |  False | Age:39.000 | Credit Amt:6607.318 | Duration:41.718 | 
+Reward:-4.793 | Episode:4320 | Qmax:-74.6579 | Episode Length:49 |  False | Age:29.000 | Credit Amt:7642.801 | Duration:37.885 | 
+Reward:-215.943 | Episode:4330 | Qmax:-74.3354 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:32.867 | 
+Reward:-68.840 | Episode:4340 | Qmax:-74.2370 | Episode Length:11 |  True | Age:29.026 | Credit Amt:1976.678 | Duration:32.317 | 
+Reward:-226.744 | Episode:4350 | Qmax:-74.0510 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-41.609 | Episode:4360 | Qmax:-73.9080 | Episode Length:8 |  True | Age:29.109 | Credit Amt:2147.419 | Duration:29.152 | 
+Reward:-103.704 | Episode:4370 | Qmax:-73.7039 | Episode Length:9 |  True | Age:30.242 | Credit Amt:1805.176 | Duration:30.046 | 
+Reward:-107.293 | Episode:4380 | Qmax:-73.7009 | Episode Length:10 |  True | Age:31.198 | Credit Amt:1805.176 | Duration:25.666 | 
+Reward:-223.106 | Episode:4390 | Qmax:-73.4488 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:23.417 | 
+Reward:-46.796 | Episode:4400 | Qmax:-73.1056 | Episode Length:11 |  True | Age:29.000 | Credit Amt:2107.817 | Duration:32.522 | 
+Reward:-50.367 | Episode:4410 | Qmax:-72.7094 | Episode Length:12 |  True | Age:29.000 | Credit Amt:2087.375 | Duration:30.418 | 
+Reward:-75.441 | Episode:4420 | Qmax:-72.4021 | Episode Length:9 |  True | Age:29.000 | Credit Amt:1940.668 | Duration:32.255 | 
+Reward:-45.434 | Episode:4430 | Qmax:-72.0853 | Episode Length:19 |  True | Age:29.000 | Credit Amt:2120.686 | Duration:29.631 | 
+Reward:-55.515 | Episode:4440 | Qmax:-71.7247 | Episode Length:12 |  True | Age:29.000 | Credit Amt:2054.007 | Duration:32.605 | 
+Reward:-76.560 | Episode:4450 | Qmax:-71.5068 | Episode Length:8 |  True | Age:29.000 | Credit Amt:1937.288 | Duration:33.749 | 
+Reward:-216.007 | Episode:4460 | Qmax:-70.8634 | Episode Length:49 |  False | Age:33.475 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4470 | Qmax:-69.5835 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4480 | Qmax:-68.3208 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4490 | Qmax:-67.4480 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4500 | Qmax:-67.1212 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-216.389 | Episode:4510 | Qmax:-67.3638 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:34.095 | 
+Reward:-226.744 | Episode:4520 | Qmax:-67.6664 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-218.059 | Episode:4530 | Qmax:-67.9765 | Episode Length:49 |  False | Age:35.327 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4540 | Qmax:-68.0575 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-16.641 | Episode:4550 | Qmax:-68.3941 | Episode Length:49 |  False | Age:29.796 | Credit Amt:5065.747 | Duration:41.973 | 
+Reward:-226.744 | Episode:4560 | Qmax:-69.3115 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-219.752 | Episode:4570 | Qmax:-70.2529 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:25.461 | 
+Reward:-226.744 | Episode:4580 | Qmax:-71.1281 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-218.833 | Episode:4590 | Qmax:-71.8535 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:26.266 | 
+Reward:-226.744 | Episode:4600 | Qmax:-72.7464 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4610 | Qmax:-73.4360 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-87.476 | Episode:4620 | Qmax:-73.9611 | Episode Length:10 |  True | Age:30.406 | Credit Amt:1902.373 | Duration:25.252 | 
+Reward:-10.872 | Episode:4630 | Qmax:-74.1664 | Episode Length:21 |  True | Age:29.404 | Credit Amt:2440.566 | Duration:23.097 | 
+Reward:-24.078 | Episode:4640 | Qmax:-74.0727 | Episode Length:18 |  True | Age:30.758 | Credit Amt:2355.701 | Duration:21.973 | 
+Reward:-219.168 | Episode:4650 | Qmax:-74.0973 | Episode Length:49 |  False | Age:37.951 | Credit Amt:1805.176 | Duration:40.256 | 
+Reward:-226.744 | Episode:4660 | Qmax:-73.7530 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4670 | Qmax:-73.8006 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-226.744 | Episode:4680 | Qmax:-73.8134 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4690 | Qmax:-74.0027 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4700 | Qmax:-73.9811 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-46.386 | Episode:4710 | Qmax:-74.1549 | Episode Length:8 |  True | Age:29.016 | Credit Amt:2110.245 | Duration:32.403 | 
+Reward:-81.672 | Episode:4720 | Qmax:-74.1428 | Episode Length:11 |  True | Age:29.214 | Credit Amt:1911.715 | Duration:34.177 | 
+Reward:-218.968 | Episode:4730 | Qmax:-73.9768 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:26.137 | 
+Reward:-226.744 | Episode:4740 | Qmax:-74.0238 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4750 | Qmax:-73.7235 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-216.231 | Episode:4760 | Qmax:-73.7133 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:33.701 | 
+Reward:-218.226 | Episode:4770 | Qmax:-74.0634 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:26.903 | 
+Reward:-226.744 | Episode:4780 | Qmax:-74.4805 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:21.973 | 
+Reward:-104.148 | Episode:4790 | Qmax:-75.1682 | Episode Length:11 |  True | Age:29.287 | Credit Amt:1805.176 | Duration:35.438 | 
+Reward:-206.239 | Episode:4800 | Qmax:-75.5954 | Episode Length:49 |  False | Age:34.428 | Credit Amt:1805.176 | Duration:33.182 | 
+Reward:-226.744 | Episode:4810 | Qmax:-76.0265 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4820 | Qmax:-76.4700 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-76.769 | Episode:4830 | Qmax:-76.5483 | Episode Length:7 |  True | Age:29.000 | Credit Amt:1934.054 | Duration:32.552 | 
+Reward:-103.396 | Episode:4840 | Qmax:-76.4845 | Episode Length:6 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:34.094 | 
+Reward:-105.018 | Episode:4850 | Qmax:-76.5161 | Episode Length:7 |  True | Age:29.000 | Credit Amt:1805.176 | Duration:36.791 | 
+Reward:-92.067 | Episode:4860 | Qmax:-76.5007 | Episode Length:14 |  True | Age:29.000 | Credit Amt:1864.579 | Duration:36.160 | 
+Reward:-226.744 | Episode:4870 | Qmax:-76.9810 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4880 | Qmax:-77.4859 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4890 | Qmax:-77.7987 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4900 | Qmax:-78.2469 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-218.467 | Episode:4910 | Qmax:-78.5700 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:26.638 | 
+Reward:-226.744 | Episode:4920 | Qmax:-79.0078 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4930 | Qmax:-79.2243 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-216.900 | Episode:4940 | Qmax:-79.6414 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:35.152 | 
+Reward:-226.744 | Episode:4950 | Qmax:-79.9618 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:4960 | Qmax:-80.4554 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-79.839 | Episode:4970 | Qmax:-80.7460 | Episode Length:9 |  True | Age:29.082 | Credit Amt:1926.094 | Duration:27.992 | 
+Reward:-48.504 | Episode:4980 | Qmax:-80.7998 | Episode Length:13 |  True | Age:29.000 | Credit Amt:2104.792 | Duration:28.492 | 
+Reward:-220.494 | Episode:4990 | Qmax:-80.9644 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:39.035 | 
+Reward:-217.949 | Episode:5000 | Qmax:-81.1499 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:36.715 | 
+Done training
+
+
+Initial State: 
+Age:29.000 | Credit Amt:6805.176 | Duration:31.973 | 
+State: [0. 0. 0.] Action 1 : [-0.45012975 -0.8386204   0.360293  ] Next State: [ 0.04836244 -0.14862173  0.02989293]
+[-0.45012975 -0.8386204   0.360293  ] : Age : 0.5498702526092529    Credit Amt : -419.31021213531494    Duration : 0.36029300093650823    
+State: [ 0.04836244 -0.14862173  0.02989293] Action 2 : [-0.4387545 -0.8281444  0.3503064] Next State: [ 0.09772536 -0.29538687  0.05895728]
+[-0.4387545 -0.8281444  0.3503064] : Age : 0.5612455010414124    Credit Amt : -414.07218575477606    Duration : 0.35030639171600336    
+State: [ 0.09772536 -0.29538687  0.05895728] Action 3 : [-0.42758974 -0.8174027   0.34054726] Next State: [ 0.14807024 -0.44024835  0.08721194]
+[-0.42758974 -0.8174027   0.34054726] : Age : 0.5724102556705475    Credit Amt : -408.7013602256775    Duration : 0.340547263622284    
+State: [ 0.14807024 -0.44024835  0.08721194] Action 4 : [-0.41665286 -0.80642986  0.33102682] Next State: [ 0.19937706 -0.58316521  0.1146767 ]
+[-0.41665286 -0.80642986  0.33102682] : Age : 0.5833471417427063    Credit Amt : -403.2149314880371    Duration : 0.3310268223285675    
+State: [ 0.19937706 -0.58316521  0.1146767 ] Action 5 : [-0.40596008 -0.7952621   0.3217552 ] Next State: [ 0.25162432 -0.7241029   0.14137221]
+[-0.40596008 -0.7952621   0.3217552 ] : Age : 0.5940399169921875    Credit Amt : -397.631049156189    Duration : 0.321755200624466    
+State: [ 0.25162432 -0.7241029   0.14137221] Action 6 : [-0.3955259  -0.78393775  0.31274134] Next State: [ 0.3047893  -0.86303367  0.16731986]
+[-0.3955259  -0.78393775  0.31274134] : Age : 0.6044740974903107    Credit Amt : -391.9688761234284    Duration : 0.31274133920669556    
+State: [ 0.3047893  -0.86303367  0.16731986] Action 7 : [-0.38536352 -0.7724965   0.30399287] Next State: [ 0.35884809 -0.99993681  0.19254165]
+[-0.38536352 -0.7724965   0.30399287] : Age : 0.6146364808082581    Credit Amt : -386.2482607364654    Duration : 0.3039928674697876    
+State: [ 0.35884809 -0.99993681  0.19254165] Action 8 : [-0.37548402 -0.7609784   0.29551595] Next State: [ 0.4137758  -1.13479869  0.21706014]
+[-0.37548402 -0.7609784   0.29551595] : Age : 0.6245159804821014    Credit Amt : -380.48920035362244    Duration : 0.2955159544944764    
+State: [ 0.4137758  -1.13479869  0.21706014] Action 9 : [-0.3658972  -0.7494239   0.28731567] Next State: [ 0.4695467  -1.26761286  0.24089825]
+[-0.3658972  -0.7494239   0.28731567] : Age : 0.6341027915477753    Credit Amt : -374.7119605541229    Duration : 0.2873156666755676    
+State: [ 0.4695467  -1.26761286  0.24089825] Action 10 : [-0.35661086 -0.7378729   0.27939552] Next State: [ 0.52613435 -1.39837993  0.26407925]
+[-0.35661086 -0.7378729   0.27939552] : Age : 0.6433891355991364    Credit Amt : -368.9364492893219    Duration : 0.27939552068710327    
+State: [ 0.52613435 -1.39837993  0.26407925] Action 11 : [-0.34763113 -0.7263643   0.27175793] Next State: [ 0.5835118  -1.52710744  0.28662657]
+[-0.34763113 -0.7263643   0.27175793] : Age : 0.6523688733577728    Credit Amt : -363.18215727806097    Duration : 0.27175793051719666    
+State: [ 0.5835118  -1.52710744  0.28662657] Action 12 : [-0.33896255 -0.7149355   0.264404  ] Next State: [ 0.64165166 -1.65380951  0.30856374]
+[-0.33896255 -0.7149355   0.264404  ] : Age : 0.6610374450683594    Credit Amt : -357.46774077415466    Duration : 0.26440399885177607    
+State: [ 0.64165166 -1.65380951  0.30856374] Action 13 : [-0.3306081 -0.7036221  0.2573335] Next State: [ 0.70052632 -1.77221686  0.32991428]
+[-0.3306081 -0.7036221  0.2573335] : Age : 0.6693919003009796    Credit Amt : -351.8110513687134    Duration : 0.25733348727226263    
+State: [ 0.70052632 -1.77221686  0.32991428] Action 14 : [-0.32338783 -0.6936074   0.25123602] Next State: [ 0.76003602 -1.77221686  0.35075893]
+[-0.32338783 -0.6936074   0.25123602] : Age : 0.6766121685504913    Credit Amt : -346.8036949634552    Duration : 0.25123602151870733    
+State: [ 0.76003602 -1.77221686  0.35075893] Action 15 : [-0.33162484 -0.7050147   0.25819165] Next State: [ 0.81882126 -1.77221686  0.37218067]
+[-0.33162484 -0.7050147   0.25819165] : Age : 0.668375164270401    Credit Amt : -352.5073528289795    Duration : 0.2581916451454162    
+State: [ 0.81882126 -1.77221686  0.37218067] Action 16 : [-0.33970806 -0.71593046  0.26503295] Next State: [ 0.87689556 -1.77221686  0.39417003]
+[-0.33970806 -0.71593046  0.26503295] : Age : 0.6602919399738312    Credit Amt : -357.9652309417725    Duration : 0.265032947063446    
+State: [ 0.87689556 -1.77221686  0.39417003] Action 17 : [-0.34764037 -0.7263757   0.27176183] Next State: [ 0.87952454 -1.77221686  0.41671767]
+[-0.34764037 -0.7263757   0.27176183] : Age : 0.6523596346378326    Credit Amt : -363.187849521637    Duration : 0.27176183462142944    
+State: [ 0.87952454 -1.77221686  0.41671767] Action 18 : [-0.34789047 -0.72669935  0.2719743 ] Next State: [ 0.87952454 -1.77221686  0.43928294]
+[-0.34789047 -0.72669935  0.2719743 ] : Age : 0.6521095335483551    Credit Amt : -363.34967613220215    Duration : 0.27197429537773127    
+State: [ 0.87952454 -1.77221686  0.43928294] Action 19 : [-0.34777758 -0.7265513   0.2718785 ] Next State: [ 0.87952454 -1.77221686  0.46184026]
+[-0.34777758 -0.7265513   0.2718785 ] : Age : 0.6522224247455597    Credit Amt : -363.2756471633911    Duration : 0.27187851071357727    
+State: [ 0.87952454 -1.77221686  0.46184026] Action 20 : [-0.34766465 -0.7264031   0.27178273] Next State: [ 0.87952454 -1.77221686  0.48438964]
+[-0.34766465 -0.7264031   0.27178273] : Age : 0.6523353457450867    Credit Amt : -363.2015585899353    Duration : 0.2717827260494233    
+State: [ 0.87952454 -1.77221686  0.48438964] Action 21 : [-0.3475519  -0.726255    0.27168703] Next State: [ 0.87952454 -1.77221686  0.50693107]
+[-0.3475519  -0.726255    0.27168703] : Age : 0.6524480879306793    Credit Amt : -363.1274998188019    Duration : 0.27168703079223633    
+State: [ 0.87952454 -1.77221686  0.50693107] Action 22 : [-0.34743905 -0.7261069   0.2715913 ] Next State: [ 0.87952454 -1.77221686  0.52946456]
+[-0.34743905 -0.7261069   0.2715913 ] : Age : 0.6525609493255615    Credit Amt : -363.05344104766846    Duration : 0.27159130573272705    
+State: [ 0.87952454 -1.77221686  0.52946456] Action 23 : [-0.3473266  -0.725959    0.27149594] Next State: [ 0.87952454 -1.77221686  0.55199014]
+[-0.3473266  -0.725959    0.27149594] : Age : 0.6526733934879303    Credit Amt : -362.97950148582464    Duration : 0.2714959383010864    
+State: [ 0.87952454 -1.77221686  0.55199014] Action 24 : [-0.3472142  -0.725811    0.27140054] Next State: [ 0.87952454 -1.77221686  0.57450781]
+[-0.3472142  -0.725811    0.27140054] : Age : 0.6527858078479767    Credit Amt : -362.90550231933594    Duration : 0.27140054106712347    
+State: [ 0.87952454 -1.77221686  0.57450781] Action 25 : [-0.34710172 -0.72566307  0.27130523] Next State: [ 0.87952454 -1.77221686  0.59701756]
+[-0.34710172 -0.72566307  0.27130523] : Age : 0.6528982818126678    Credit Amt : -362.8315329551697    Duration : 0.27130523324012756    
+State: [ 0.87952454 -1.77221686  0.59701756] Action 26 : [-0.34698936 -0.7255151   0.27120993] Next State: [ 0.87952454 -1.77221686  0.61951941]
+[-0.34698936 -0.7255151   0.27120993] : Age : 0.6530106365680695    Credit Amt : -362.7575635910034    Duration : 0.27120992541313166    
+State: [ 0.87952454 -1.77221686  0.61951941] Action 27 : [-0.346877   -0.7253671   0.27111462] Next State: [ 0.87952454 -1.77221686  0.64201336]
+[-0.346877   -0.7253671   0.27111462] : Age : 0.6531229913234711    Credit Amt : -362.68356442451477    Duration : 0.2711146175861359    
+State: [ 0.87952454 -1.77221686  0.64201336] Action 28 : [-0.34676465 -0.7252191   0.27101934] Next State: [ 0.87952454 -1.77221686  0.66449939]
+[-0.34676465 -0.7252191   0.27101934] : Age : 0.6532353460788727    Credit Amt : -362.60953545570374    Duration : 0.27101933956146246    
+State: [ 0.87952454 -1.77221686  0.66449939] Action 29 : [-0.34665236 -0.72507113  0.27092412] Next State: [ 0.87952454 -1.77221686  0.68697753]
+[-0.34665236 -0.72507113  0.27092412] : Age : 0.6533476412296295    Credit Amt : -362.5355660915375    Duration : 0.27092412114143366    
+State: [ 0.87952454 -1.77221686  0.68697753] Action 30 : [-0.34654012 -0.7249231   0.27082896] Next State: [ 0.87952454 -1.77221686  0.70944777]
+[-0.34654012 -0.7249231   0.27082896] : Age : 0.6534598767757416    Credit Amt : -362.4615371227265    Duration : 0.27082896232604986    
+State: [ 0.87952454 -1.77221686  0.70944777] Action 31 : [-0.34642786 -0.72477496  0.2707338 ] Next State: [ 0.87952454 -1.77221686  0.73191012]
+[-0.34642786 -0.72477496  0.2707338 ] : Age : 0.653572142124176    Credit Amt : -362.387478351593    Duration : 0.2707338035106659    
+State: [ 0.87952454 -1.77221686  0.73191012] Action 32 : [-0.34631562 -0.72462696  0.27063859] Next State: [ 0.87952454 -1.77221686  0.75436457]
+[-0.34631562 -0.72462696  0.27063859] : Age : 0.653684377670288    Credit Amt : -362.3134791851043    Duration : 0.2706385850906371    
+State: [ 0.87952454 -1.77221686  0.75436457] Action 33 : [-0.34620348 -0.7244789   0.2705435 ] Next State: [ 0.87952454 -1.77221686  0.77681112]
+[-0.34620348 -0.7244789   0.2705435 ] : Age : 0.653796523809433    Credit Amt : -362.23945021629333    Duration : 0.270543485879898    
+State: [ 0.87952454 -1.77221686  0.77681112] Action 34 : [-0.3460913 -0.7243307  0.2704484] Next State: [ 0.87952454 -1.77221686  0.79924979]
+[-0.3460913 -0.7243307  0.2704484] : Age : 0.6539086997509003    Credit Amt : -362.1653616428375    Duration : 0.27044838666915894    
+State: [ 0.87952454 -1.77221686  0.79924979] Action 35 : [-0.34597918 -0.7241826   0.27035338] Next State: [ 0.87952454 -1.77221686  0.82168057]
+[-0.34597918 -0.7241826   0.27035338] : Age : 0.6540208160877228    Credit Amt : -362.0913028717041    Duration : 0.2703533768653869    
+State: [ 0.87952454 -1.77221686  0.82168057] Action 36 : [-0.34586713 -0.7240345   0.27025834] Next State: [ 0.87952454 -1.77221686  0.82968386]
+[-0.34586713 -0.7240345   0.27025834] : Age : 0.6541328728199005    Credit Amt : -362.0172441005707    Duration : 0.27025833725929266    
+State: [ 0.87952454 -1.77221686  0.82968386] Action 37 : [-0.34582713 -0.7239816   0.27022442] Next State: [ 0.87952454 -1.77221686  0.82968386]
+[-0.34582713 -0.7239816   0.27022442] : Age : 0.6541728675365448    Credit Amt : -361.99080944061285    Duration : 0.2702244222164154    
+State: [ 0.87952454 -1.77221686  0.82968386] Action 38 : [-0.34582713 -0.7239816   0.27022442] Next State: [ 0.87952454 -1.77221686  0.82968386]
+[-0.34582713 -0.7239816   0.27022442] : Age : 0.6541728675365448    Credit Amt : -361.99080944061285    Duration : 0.2702244222164154    
+State: [ 0.87952454 -1.77221686  0.82968386] Action 39 : [-0.34582713 -0.7239816   0.27022442] Next State: [ 0.87952454 -1.77221686  0.82968386]
+[-0.34582713 -0.7239816   0.27022442] : Age : 0.6541728675365448    Credit Amt : -361.99080944061285    Duration : 0.2702244222164154    
+State: [ 0.87952454 -1.77221686  0.82968386] Action 40 : [-0.34582713 -0.7239816   0.27022442] Next State: [ 0.87952454 -1.77221686  0.82968386]
+[-0.34582713 -0.7239816   0.27022442] : Age : 0.6541728675365448    Credit Amt : -361.99080944061285    Duration : 0.2702244222164154    
+State: [ 0.87952454 -1.77221686  0.82968386] Action 41 : [-0.34582713 -0.7239816   0.27022442] Next State: [ 0.87952454 -1.77221686  0.82968386]
+[-0.34582713 -0.7239816   0.27022442] : Age : 0.6541728675365448    Credit Amt : -361.99080944061285    Duration : 0.2702244222164154    
+State: [ 0.87952454 -1.77221686  0.82968386] Action 42 : [-0.34582713 -0.7239816   0.27022442] Next State: [ 0.87952454 -1.77221686  0.82968386]
+[-0.34582713 -0.7239816   0.27022442] : Age : 0.6541728675365448    Credit Amt : -361.99080944061285    Duration : 0.2702244222164154    
+State: [ 0.87952454 -1.77221686  0.82968386] Action 43 : [-0.34582713 -0.7239816   0.27022442] Next State: [ 0.87952454 -1.77221686  0.82968386]
+[-0.34582713 -0.7239816   0.27022442] : Age : 0.6541728675365448    Credit Amt : -361.99080944061285    Duration : 0.2702244222164154    
+State: [ 0.87952454 -1.77221686  0.82968386] Action 44 : [-0.34582713 -0.7239816   0.27022442] Next State: [ 0.87952454 -1.77221686  0.82968386]
+[-0.34582713 -0.7239816   0.27022442] : Age : 0.6541728675365448    Credit Amt : -361.99080944061285    Duration : 0.2702244222164154    
+State: [ 0.87952454 -1.77221686  0.82968386] Action 45 : [-0.34582713 -0.7239816   0.27022442] Next State: [ 0.87952454 -1.77221686  0.82968386]
+[-0.34582713 -0.7239816   0.27022442] : Age : 0.6541728675365448    Credit Amt : -361.99080944061285    Duration : 0.2702244222164154    
+State: [ 0.87952454 -1.77221686  0.82968386] Action 46 : [-0.34582713 -0.7239816   0.27022442] Next State: [ 0.87952454 -1.77221686  0.82968386]
+[-0.34582713 -0.7239816   0.27022442] : Age : 0.6541728675365448    Credit Amt : -361.99080944061285    Duration : 0.2702244222164154    
+State: [ 0.87952454 -1.77221686  0.82968386] Action 47 : [-0.34582713 -0.7239816   0.27022442] Next State: [ 0.87952454 -1.77221686  0.82968386]
+[-0.34582713 -0.7239816   0.27022442] : Age : 0.6541728675365448    Credit Amt : -361.99080944061285    Duration : 0.2702244222164154    
+State: [ 0.87952454 -1.77221686  0.82968386] Action 48 : [-0.34582713 -0.7239816   0.27022442] Next State: [ 0.87952454 -1.77221686  0.82968386]
+[-0.34582713 -0.7239816   0.27022442] : Age : 0.6541728675365448    Credit Amt : -361.99080944061285    Duration : 0.2702244222164154    
+State: [ 0.87952454 -1.77221686  0.82968386] Action 49 : [-0.34582713 -0.7239816   0.27022442] Next State: [ 0.87952454 -1.77221686  0.82968386]
+[-0.34582713 -0.7239816   0.27022442] : Age : 0.6541728675365448    Credit Amt : -361.99080944061285    Duration : 0.2702244222164154    
+State: [ 0.87952454 -1.77221686  0.82968386] Action 50 : [-0.34582713 -0.7239816   0.27022442] Next State: [ 0.87952454 -1.77221686  0.82968386]
+[-0.34582713 -0.7239816   0.27022442] : Age : 0.6541728675365448    Credit Amt : -361.99080944061285    Duration : 0.2702244222164154    
+Final State: 
+Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Total Reward: -226.74353046704516
+Time taken: 00:31:41

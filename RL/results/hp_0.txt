@@ -1,0 +1,29 @@
+GermanLoadWorld
+Feature data:
+{'Age': {'type': 'numerical', 'mean': 35.546, 'std': 11.36977941738537}, 'Checking Status': {'values': array(['A11', 'A12', 'A13', 'A14'], dtype=object), 'type': 'categorical'}, 'Credit Amt': {'type': 'numerical', 'mean': 3271.258, 'std': 2821.3251545038192}, 'Credit History': {'values': array(['A30', 'A31', 'A32', 'A33', 'A34'], dtype=object), 'type': 'categorical'}, 'Duration': {'type': 'numerical', 'mean': 20.903, 'std': 12.052783537424043}, 'Existing credits': {'type': 'numerical', 'mean': 1.407, 'std': 0.5773655687690427}, 'Foreign Worker': {'values': array(['A201', 'A202'], dtype=object), 'type': 'categorical'}, 'Housing': {'values': array(['A151', 'A152', 'A153'], dtype=object), 'type': 'categorical'}, 'Installment Rate': {'type': 'numerical', 'mean': 2.973, 'std': 1.1181551770662246}, 'Job': {'values': array(['A171', 'A172', 'A173', 'A174'], dtype=object), 'type': 'categorical'}, 'Num People': {'type': 'numerical', 'mean': 1.155, 'std': 0.36190468358395134}, 'Other debtors': {'values': array(['A101', 'A102', 'A103'], dtype=object), 'type': 'categorical'}, 'Other installment plans': {'values': array(['A141', 'A142', 'A143'], dtype=object), 'type': 'categorical'}, 'Personal Status': {'values': array(['A91', 'A92', 'A93', 'A94'], dtype=object), 'type': 'categorical'}, 'Present Residence since': {'type': 'numerical', 'mean': 2.845, 'std': 1.1031658986752626}, 'Present emp since': {'values': array(['A71', 'A72', 'A73', 'A74', 'A75'], dtype=object), 'type': 'categorical'}, 'Property': {'values': array(['A121', 'A122', 'A123', 'A124'], dtype=object), 'type': 'categorical'}, 'Purpose': {'values': array(['A40', 'A41', 'A410', 'A42', 'A43', 'A44', 'A45', 'A46', 'A48',
+       'A49'], dtype=object), 'type': 'categorical'}, 'Saving acc': {'values': array(['A61', 'A62', 'A63', 'A64', 'A65'], dtype=object), 'type': 'categorical'}, 'Telephone': {'values': array(['A191', 'A192'], dtype=object), 'type': 'categorical'}}
+Actions: 
+{'Age': {'step_range': [0, 2], 'max_change': [0, 10]}, 'Credit Amt': {'step_range': [-500, 500], 'max_change': [-5000, 5000]}, 'Duration': {'step_range': [-1, 1], 'max_change': [-10, 10]}}
+Terminal Reward: 0
+
+
+
+Initial State:  Age:29.000 | Credit Amt:6805.176 | Duration:31.973 | 
+Reward:-222.939 | Episode:10 | Qmax:-3.9718 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:40.449 | 
+Reward:-226.744 | Episode:20 | Qmax:-8.5404 | Episode Length:49 |  False | Age:39.000 | Credit Amt:1805.176 | Duration:41.973 | 
+Reward:-25.150 | Episode:30 | Qmax:-13.0495 | Episode Length:49 |  False | Age:39.000 | Credit Amt:7521.013 | Duration:41.962 | 
+Reward:-226.744 | Episode:40 | Qmax:-0.5550 | Episode Length:49 |  False | Age:39.000 | Credit Amt:11805.176 | Duration:21.973 | 
+Reward:-226.744 | Episode:50 | Qmax:22.1799 | Episode Length:49 |  False | Age:39.000 | Credit Amt:11805.176 | Duration:21.973 | 
+Reward:-41.962 | Episode:60 | Qmax:38.0983 | Episode Length:49 |  False | Age:29.000 | Credit Amt:3548.439 | Duration:21.973 | 
+Reward:-121.407 | Episode:70 | Qmax:48.5534 | Episode Length:12 |  True | Age:30.564 | Credit Amt:2377.441 | Duration:21.973 | 
+Reward:-208.856 | Episode:80 | Qmax:53.4775 | Episode Length:12 |  True | Age:32.836 | Credit Amt:1836.368 | Duration:21.973 | 
+Reward:-216.639 | Episode:90 | Qmax:68.9514 | Episode Length:49 |  False | Age:39.000 | Credit Amt:11805.176 | Duration:29.301 | 
+Reward:-213.750 | Episode:100 | Qmax:104.8367 | Episode Length:49 |  False | Age:29.000 | Credit Amt:11805.176 | Duration:41.973 | 
+Reward:-226.744 | Episode:110 | Qmax:128.9439 | Episode Length:49 |  False | Age:39.000 | Credit Amt:11805.176 | Duration:21.973 | 
+Reward:-215.880 | Episode:120 | Qmax:145.8146 | Episode Length:49 |  False | Age:38.788 | Credit Amt:11805.176 | Duration:29.294 | 
+Reward:-216.003 | Episode:130 | Qmax:136.9580 | Episode Length:49 |  False | Age:39.000 | Credit Amt:11805.176 | Duration:30.890 | 
+Reward:-220.529 | Episode:140 | Qmax:119.3973 | Episode Length:49 |  False | Age:39.000 | Credit Amt:11805.176 | Duration:24.887 | 
+Reward:-213.750 | Episode:150 | Qmax:80.7908 | Episode Length:49 |  False | Age:29.000 | Credit Amt:11805.176 | Duration:21.973 | 
+Reward:-213.750 | Episode:160 | Qmax:98.7772 | Episode Length:49 |  False | Age:29.000 | Credit Amt:11805.176 | Duration:41.973 | 
+Reward:-216.175 | Episode:170 | Qmax:102.5570 | Episode Length:49 |  False | Age:33.666 | Credit Amt:11805.176 | Duration:41.973 | 
+Reward:-221.716 | Episode:180 | Qmax:82.1369 | Episode Length:49 |  False | Age:39.000 | Credit Amt:11805.176 | Duration:39.804 | 

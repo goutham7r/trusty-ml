@@ -4,12 +4,12 @@ import tensorflow as tf
 from replay_buffer import ReplayBuffer
 from tqdm import tqdm_notebook as tqdm
 
-import os
-# open("results/training.txt", "w").close()
+import os, sys
 
-import logging
-logging.basicConfig(filename='results/training_track.txt',level=logging.DEBUG, filemode='w+')
+# import logging
+# logging.basicConfig(filename='results/training_track.txt',level=logging.DEBUG, filemode='w+')
 
+K = 5
 
 class ActorNetwork(object):
     """
@@ -41,12 +41,6 @@ class ActorNetwork(object):
         self.target_inputs, self.target_out, self.target_scaled_out = self.create_actor_network()
         
         self.target_network_params = tf.trainable_variables()[len(already)+len(self.network_params):]
-              
-#         self.update_target_network_params = []
-#         for i in range(len(self.target_network_params)):
-#             print(self.network_params[i], self.target_network_params[i])
-#             self.update_target_network_params.append(tf.assign(self.target_network_params[i], tf.multiply(self.network_params[i], self.tau)+tf.multiply(self.target_network_params[i], 1. - self.tau)))
-#             print()
 
         # Op for periodically updating target network with online network
         # weights
@@ -66,15 +60,14 @@ class ActorNetwork(object):
         self.optimize = tf.train.AdamOptimizer(self.learning_rate).\
             apply_gradients(zip(self.actor_gradients, self.network_params))
 
-        self.num_trainable_vars = len(
-            self.network_params) + len(self.target_network_params)
+        self.num_trainable_vars = len(self.network_params) + len(self.target_network_params)
 
     def create_actor_network(self):
         inputs = tflearn.input_data(shape=[None, self.s_dim])
-        net = tflearn.fully_connected(inputs, 40)
+        net = tflearn.fully_connected(inputs, self.s_dim*K)
         net = tflearn.layers.normalization.batch_normalization(net)
         net = tflearn.activations.relu(net)
-        net = tflearn.fully_connected(net, 30)
+        net = tflearn.fully_connected(net, self.s_dim*K)
         net = tflearn.layers.normalization.batch_normalization(net)
         net = tflearn.activations.relu(net)
         # Final layer weights are init to Uniform[-3e-3, 3e-3]
@@ -161,14 +154,14 @@ class CriticNetwork(object):
     def create_critic_network(self):
         inputs = tflearn.input_data(shape=[None, self.s_dim])
         action = tflearn.input_data(shape=[None, self.a_dim])
-        net = tflearn.fully_connected(inputs, 40)
+        net = tflearn.fully_connected(inputs, self.s_dim*K)
         net = tflearn.layers.normalization.batch_normalization(net)
         net = tflearn.activations.relu(net)
 
         # Add the action tensor in the 2nd hidden layer
         # Use two temp layers to get the corresponding weights and biases
-        t1 = tflearn.fully_connected(net, 30)
-        t2 = tflearn.fully_connected(action, 30)
+        t1 = tflearn.fully_connected(net, self.s_dim*K)
+        t2 = tflearn.fully_connected(action, self.s_dim*K)
 
         net = tflearn.activation(
             tf.matmul(net, t1.W) + tf.matmul(action, t2.W) + t2.b, activation='relu')
@@ -245,12 +238,15 @@ def build_summaries():
     return summary_ops, summary_vars
     
 def train(sess, env, args, actor, critic, actor_noise):
+    
+    print("Initial State: ", end = ' ')
+    env.describe_state(env.reset())
 
     # Set up summary Ops
-    summary_ops, summary_vars = build_summaries()
+#     summary_ops, summary_vars = build_summaries()
 
     sess.run(tf.global_variables_initializer())
-    writer = tf.summary.FileWriter(args['summary_dir'], sess.graph)
+#     writer = tf.summary.FileWriter(args['summary_dir'], sess.graph)
 
     # Initialize target network weights
     actor.update_target_network()
@@ -264,7 +260,7 @@ def train(sess, env, args, actor, critic, actor_noise):
     # in other environments.
     # tflearn.is_training(True)
 
-    for i in tqdm(range(int(args['max_episodes']))):
+    for i in tqdm(range(1,int(args['max_episodes'])+1)):
         s = env.reset()
 
         ep_reward = 0
@@ -273,15 +269,17 @@ def train(sess, env, args, actor, critic, actor_noise):
 #         print(len(tf.trainable_variables()))
 
 
-        for j in range(int(args['max_episode_len'])):
+        for j in range(1,int(args['max_episode_len'])+1):
 
             # Added exploration noise
             #a = actor.predict(np.reshape(s, (1, 3))) + (1. / (1. + i))
             a = actor.predict(np.reshape(s, (1, actor.s_dim))) + actor_noise()
+#             a = actor.predict(np.reshape(s, (1, actor.s_dim))) + np.random.normal(0, 0.3, (1, actor.s_dim))
+
             
             a = a[0]
-            a_max = np.max(a)
-            a[a!=a_max] = 0
+#             a_max = np.max(a)
+#             a[a!=a_max] = 0
             
             s2, r, terminal, info = env.step(a)
 #             print(a[0], s2, r, info)
@@ -324,45 +322,48 @@ def train(sess, env, args, actor, critic, actor_noise):
             s = s2
             ep_reward += r
 
-            if terminal:
-
-                summary_str = sess.run(summary_ops, feed_dict={
-                    summary_vars[0]: ep_reward,
-                    summary_vars[1]: ep_ave_max_q / float(j)
-                })
-
-                writer.add_summary(summary_str, i)
-                writer.flush()
+            if terminal or j==int(args['max_episode_len'])-1:
                 
-#                 print('Reward: {:d} | Episode: {:d} | Qmax: {:.4f} | Episode Length: {:d}'.format(int(ep_reward), i, (ep_ave_max_q / float(j)),j))
-
-                
-                logging.info('Reward: {:d} | Episode: {:d} | Qmax: {:.4f} | Episode Length: {:d}'.format(int(ep_reward), i, (ep_ave_max_q / float(j)),j))
+                if i%10==0:
+                    print('Reward:{:.3f} | Episode:{:d} | Qmax:{:.4f} | Episode Length:{:d} | '.format(ep_reward, i, (ep_ave_max_q / float(j)),j), terminal, end = ' | ')
+                    env.describe_state(s)
+                    sys.stdout.flush()
                 break
                 
                 
-def get_opt_steps(sess, env, actor):
+def get_opt_steps(args, sess, env, actor):
     
     s = env.reset()
-    while True:
-        a = actor.predict(np.reshape(s, (1, actor.s_dim)))
+    print("Initial State: ")
+    env.describe_state()
+    rew = 0
+    
+    for j in range(int(args['max_final_steps'])):
+        a = actor.predict_target(np.reshape(s, (1, actor.s_dim)))
         
         a = a[0]
-        a_max = np.max(a)
-        a[a!=a_max] = 0
+#         a_max = np.max(a)
+#         a[a!=a_max] = 0
         
         s2, r, terminal, info = env.step(a)
+        print("State:",s, "Action", j+1, ":", a, "Next State:", s2)
+
+        
+        rew += r
 #         print("action: ", a[0], " | ", r, terminal)
         env.describe_action(a)
         s = s2
-        if terminal:
+        if terminal or j==int(args['max_final_steps'])-1:
+            print("Final State: ")
+            env.describe_state(s)
+            print("Total Reward:", rew)
             break
     
     
                 
                 
 def main(args):
-
+    
     with tf.Session() as sess:
 
         env = args['env']
@@ -388,6 +389,6 @@ def main(args):
 
         train(sess, env, args, actor, critic, actor_noise)
         
-        print("Done training")
+        print("Done training\n\n")
         
-        get_opt_steps(sess, env, actor)
+        get_opt_steps(args, sess, env, actor)
